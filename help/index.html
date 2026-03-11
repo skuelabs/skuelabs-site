@@ -238,6 +238,25 @@
       font-weight: 700;
     }
 
+    /* Screenshots */
+    .screenshot {
+      display: block;
+      width: 100%;
+      max-width: 820px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin: 20px 0 28px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    .screenshot-caption {
+      font-size: 13px;
+      color: var(--muted);
+      text-align: center;
+      margin-top: -20px;
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+
     /* Inline code */
     code {
       font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
@@ -426,6 +445,8 @@
         <h2>Installation</h2>
         <p>Skue: Bulk Order Form installs like any Shopify app. After installing from the Shopify App Store, open the app from your Shopify admin sidebar under <strong>Apps &gt; Skue: Bulk Order Form</strong>.</p>
         <p>The first thing you'll see is the <strong>Dashboard</strong> — your home base for deploying the order form, tracking setup progress, and managing your account.</p>
+        <img src="images/dashboard.png" alt="Skue Dashboard showing installation status, setup guide, and profiles" class="screenshot">
+        <p class="screenshot-caption">The Skue Dashboard — your home base for setup and management</p>
 
         <div class="callout callout-info">
           <strong>Shopify compatibility</strong>
@@ -567,6 +588,8 @@
       <section class="doc-section" id="settings">
         <h2>Settings &amp; Appearance</h2>
         <p>The <strong>Settings</strong> page controls global options for your order form.</p>
+        <img src="images/settings.png" alt="Skue Settings page showing page title, visibility, PDP pricing, and appearance options" class="screenshot">
+        <p class="screenshot-caption">The Settings page — configure titles, visibility, pricing display, and branding</p>
 
         <h3>Page title &amp; labels</h3>
         <p>Customize the heading that appears at the top of the order form (default: "ORDER FORM") and the label on the add-to-cart button (default: "Update Cart").</p>
@@ -737,6 +760,8 @@
       <section class="doc-section" id="order-form">
         <h2>The Order Form</h2>
         <p>The storefront order form is the customer-facing page at <code>/pages/order-form</code>. It displays your products in a spreadsheet-style table organized by collection.</p>
+        <img src="images/order-form.png" alt="Storefront order form showing product grid with collection headers, pricing columns, and quantity controls" class="screenshot">
+        <p class="screenshot-caption">The storefront order form — a spreadsheet-style grid with review bar, search, and action buttons</p>
 
         <h3>Layout</h3>
         <p>From top to bottom, the order form includes:</p>
@@ -752,6 +777,8 @@
 
         <h3>Variants</h3>
         <p>Products with multiple variants show a <strong>Choose Variants</strong> button instead of a simple quantity input. Clicking it opens a modal where customers can set quantities for each variant (size, color, etc.) individually.</p>
+        <img src="images/order-form-grid.png" alt="Order form product grid showing Choose Variants button and multiple collection sections" class="screenshot">
+        <p class="screenshot-caption">Products with variants show a "Choose Variants" button; simple products show +/− quantity controls</p>
       </section>
 
       <section class="doc-section" id="review-bar">
@@ -846,6 +873,8 @@
       <section class="doc-section" id="plans">
         <h2>Plans &amp; Pricing</h2>
         <p>Skue offers four plans to fit businesses of every size:</p>
+        <img src="images/billing.png" alt="Skue Plan and Billing page showing Free, Essentials, Growth, and Scale plan cards with feature comparison table" class="screenshot">
+        <p class="screenshot-caption">Plan & Billing page — compare plans side by side and upgrade in one click</p>
 
         <table class="doc-table">
           <thead>
