@@ -290,23 +290,6 @@
       border-bottom: none;
     }
 
-    /* Screenshot placeholders */
-    .screenshot {
-      background: var(--code-bg);
-      border: 1px dashed var(--border);
-      border-radius: 8px;
-      padding: 24px;
-      text-align: center;
-      margin-bottom: 20px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-    .screenshot img {
-      max-width: 100%;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-    }
-
     /* Feature badges */
     .plan-badge {
       display: inline-block;
@@ -376,7 +359,6 @@
       <span class="logo-text">Skue<span>Labs</span></span>
     </a>
     <div class="nav-links">
-      <a href="/" class="nav-link">Home</a>
       <a href="/help" class="nav-link" style="color:var(--text);font-weight:600">Help Center</a>
       <a href="/#contact" class="nav-link">Contact</a>
     </div>
@@ -760,8 +742,8 @@
       <section class="doc-section" id="order-form">
         <h2>The Order Form</h2>
         <p>The storefront order form is the customer-facing page at <code>/pages/order-form</code>. It displays your products in a spreadsheet-style table organized by collection.</p>
-        <img src="images/order-form.png" alt="Storefront order form showing product grid with collection headers, pricing columns, and quantity controls" class="screenshot">
-        <p class="screenshot-caption">The storefront order form — a spreadsheet-style grid with review bar, search, and action buttons</p>
+        <img src="images/order-form.png" alt="Storefront order form showing review bar, search toolbar, delivery windows, starter orders, and product grid with pricing columns" class="screenshot">
+        <p class="screenshot-caption">The order form — review bar, toolbar with search and actions, and product grid organized by collection</p>
 
         <h3>Layout</h3>
         <p>From top to bottom, the order form includes:</p>
@@ -777,8 +759,6 @@
 
         <h3>Variants</h3>
         <p>Products with multiple variants show a <strong>Choose Variants</strong> button instead of a simple quantity input. Clicking it opens a modal where customers can set quantities for each variant (size, color, etc.) individually.</p>
-        <img src="images/order-form-grid.png" alt="Order form product grid showing Choose Variants button and multiple collection sections" class="screenshot">
-        <p class="screenshot-caption">Products with variants show a "Choose Variants" button; simple products show +/− quantity controls</p>
       </section>
 
       <section class="doc-section" id="review-bar">
