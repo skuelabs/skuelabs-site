@@ -331,6 +331,33 @@
     }
     footer .footer-links a:hover { color: var(--text); }
 
+    /* ── Mobile menu toggle ─────────────────────────────────── */
+    .mobile-menu-toggle {
+      display: none;
+      width: 100%;
+      padding: 12px 16px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      cursor: pointer;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.15s;
+    }
+    .mobile-menu-toggle:hover { background: var(--code-bg); }
+    .mobile-menu-toggle svg {
+      width: 18px;
+      height: 18px;
+      transition: transform 0.25s ease;
+    }
+    .sidebar.open .mobile-menu-toggle svg {
+      transform: rotate(180deg);
+    }
+
     /* ── Mobile ───────────────────────────────────────────────── */
     @media (max-width: 768px) {
       .docs-layout { flex-direction: column; gap: 0; }
@@ -339,10 +366,24 @@
         width: 100%;
         max-height: none;
         border-bottom: 1px solid var(--border);
-        padding-bottom: 24px;
+        padding-bottom: 16px;
         margin-bottom: 32px;
       }
-      .sidebar-group { margin-bottom: 16px; }
+      .mobile-menu-toggle { display: flex; }
+      .sidebar-nav {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, opacity 0.25s ease;
+        opacity: 0;
+      }
+      .sidebar.open .sidebar-nav {
+        max-height: 600px;
+        opacity: 1;
+        margin-top: 12px;
+      }
+      .sidebar-group { margin-bottom: 12px; }
+      .sidebar-group-title { margin-bottom: 4px; }
+      .sidebar a { padding: 6px 0; }
       footer { flex-direction: column; align-items: center; }
     }
 
@@ -367,52 +408,58 @@
   <!-- ── Hero ─────────────────────────────────────────────────── -->
   <section class="hero">
     <h1>Help Center</h1>
-    <p>Everything you need to set up and manage your Skue: Bulk Order Form. Can't find what you need? <a href="mailto:support@skuelabs.com" style="color:var(--accent-dark)">Email us</a>.</p>
+    <p>Everything you need to set up and manage your Skue: Bulk Order Form. Can't find what you need? <a href="/#contact" style="color:var(--accent-dark)">Contact us</a>.</p>
   </section>
 
   <!-- ── Docs Layout ──────────────────────────────────────────── -->
   <div class="docs-layout">
 
     <!-- ── Sidebar ────────────────────────────────────────────── -->
-    <aside class="sidebar">
-      <div class="sidebar-group">
-        <div class="sidebar-group-title">Getting Started</div>
-        <a href="#installation">Installation</a>
-        <a href="#one-click-deploy">One-click deploy</a>
-        <a href="#store-navigation">Adding to store navigation</a>
-      </div>
-      <div class="sidebar-group">
-        <div class="sidebar-group-title">Configuration</div>
-        <a href="#collections">Collections &amp; Layout</a>
-        <a href="#columns">Column configuration</a>
-        <a href="#features">Feature toggles</a>
-        <a href="#settings">Settings &amp; Appearance</a>
-      </div>
-      <div class="sidebar-group">
-        <div class="sidebar-group-title">Features</div>
-        <a href="#templates">Starter Orders</a>
-        <a href="#delivery-windows">Delivery Windows</a>
-        <a href="#profiles">Profiles</a>
-        <a href="#help-content">Help Content</a>
-        <a href="#analytics">Order Analytics</a>
-      </div>
-      <div class="sidebar-group">
-        <div class="sidebar-group-title">Storefront</div>
-        <a href="#order-form">The Order Form</a>
-        <a href="#review-bar">Review Bar</a>
-        <a href="#search">Search &amp; QuickView</a>
-        <a href="#csv-upload">CSV Upload</a>
-      </div>
-      <div class="sidebar-group">
-        <div class="sidebar-group-title">Billing</div>
-        <a href="#plans">Plans &amp; Pricing</a>
-        <a href="#upgrading">Upgrading</a>
-      </div>
-      <div class="sidebar-group">
-        <div class="sidebar-group-title">Support</div>
-        <a href="#faq">FAQ</a>
-        <a href="#troubleshooting">Troubleshooting</a>
-        <a href="#contact-support">Contact Support</a>
+    <aside class="sidebar" id="sidebar">
+      <button class="mobile-menu-toggle" onclick="document.getElementById('sidebar').classList.toggle('open')" aria-label="Toggle navigation menu">
+        <span>Browse topics</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="sidebar-nav">
+        <div class="sidebar-group">
+          <div class="sidebar-group-title">Getting Started</div>
+          <a href="#installation">Installation</a>
+          <a href="#one-click-deploy">One-click deploy</a>
+          <a href="#store-navigation">Adding to store navigation</a>
+        </div>
+        <div class="sidebar-group">
+          <div class="sidebar-group-title">Configuration</div>
+          <a href="#collections">Collections &amp; Layout</a>
+          <a href="#columns">Column configuration</a>
+          <a href="#features">Feature toggles</a>
+          <a href="#settings">Settings &amp; Appearance</a>
+        </div>
+        <div class="sidebar-group">
+          <div class="sidebar-group-title">Features</div>
+          <a href="#templates">Starter Orders</a>
+          <a href="#delivery-windows">Delivery Windows</a>
+          <a href="#profiles">Profiles</a>
+          <a href="#help-content">Help Content</a>
+          <a href="#analytics">Order Analytics</a>
+        </div>
+        <div class="sidebar-group">
+          <div class="sidebar-group-title">Storefront</div>
+          <a href="#order-form">The Order Form</a>
+          <a href="#review-bar">Review Bar</a>
+          <a href="#search">Search &amp; QuickView</a>
+          <a href="#csv-upload">CSV Upload</a>
+        </div>
+        <div class="sidebar-group">
+          <div class="sidebar-group-title">Billing</div>
+          <a href="#plans">Plans &amp; Pricing</a>
+          <a href="#upgrading">Upgrading</a>
+        </div>
+        <div class="sidebar-group">
+          <div class="sidebar-group-title">Support</div>
+          <a href="#faq">FAQ</a>
+          <a href="#troubleshooting">Troubleshooting</a>
+          <a href="#contact-support">Contact Support</a>
+        </div>
       </div>
     </aside>
 
@@ -1056,8 +1103,8 @@
         <h2>Contact Support</h2>
         <p>Can't find the answer you need? We're here to help.</p>
         <ul>
-          <li><strong>Email:</strong> <a href="mailto:support@skuelabs.com" style="color:var(--accent-dark)">support@skuelabs.com</a></li>
-          <li><strong>Feature requests:</strong> <a href="mailto:support@skuelabs.com?subject=Feature%20Request" style="color:var(--accent-dark)">Send a feature request</a></li>
+          <li><strong>Contact form:</strong> <a href="/#contact" style="color:var(--accent-dark)">Send us a message</a></li>
+          <li><strong>Feature requests:</strong> <a href="/#contact" style="color:var(--accent-dark)">Request a feature</a></li>
         </ul>
         <p>We typically respond within 24 hours on business days. Priority support customers on the Scale plan receive expedited responses.</p>
       </section>
@@ -1075,5 +1122,13 @@
     </div>
   </footer>
 
+  <script>
+    // Close mobile sidebar menu when a nav link is clicked
+    document.querySelectorAll('.sidebar-nav a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        document.getElementById('sidebar').classList.remove('open');
+      });
+    });
+  </script>
 </body>
 </html>
