@@ -723,8 +723,14 @@
         </ul>
         <p>When the form is restricted, unauthorized visitors see a customizable lock-screen message instead.</p>
 
-        <h3>PDP Pricing <span class="plan-badge plan-growth">Growth+</span></h3>
-        <p>Enable the product detail page (PDP) pricing block to show MAP, B2B price, and margin calculations on individual product pages throughout your store.</p>
+        <h3>PDP Pricing <span class="plan-badge plan-essentials">Essentials+</span></h3>
+        <p>Enable the product detail page (PDP) pricing block to show B2B price, MAP (retail price), and margin calculations on individual product pages throughout your store.</p>
+        <p>When you enable <strong>"Show B2B pricing on product pages"</strong> in Settings, two additional sub-toggles appear:</p>
+        <ul>
+          <li><strong>Show retail price (MAP)</strong> — Display the retail/MAP price alongside the B2B price. Default: on.</li>
+          <li><strong>Show margin percentage</strong> — Display the profit margin percentage. Some merchants prefer to hide margin from their dealers. Default: on.</li>
+        </ul>
+        <p>This gives you full control over what pricing information appears on product pages. You can show just the B2B price, B2B + MAP without margin, B2B + margin without MAP, or all three values together.</p>
 
         <h3>Appearance <span class="plan-badge plan-essentials">Essentials+</span></h3>
         <p>Customize the visual appearance of your order form to match your brand:</p>
@@ -789,6 +795,15 @@
 
         <h4>Cutoff time</h4>
         <p>Set a daily cutoff time (e.g., 2:00 PM). Orders placed after the cutoff count toward the next available window.</p>
+
+        <h3>Order tagging</h3>
+        <p>Enable <strong>"Tag orders with delivery window name"</strong> in Delivery Windows &rarr; Settings to automatically tag orders with their selected delivery window (e.g., <code>DW: Est. April 15 2026</code>).</p>
+        <p>This makes orders <strong>filterable and sortable by delivery window</strong> in the Shopify admin orders list. Without tagging, the delivery window is only saved as a cart attribute and order note — visible on individual order pages and in confirmation emails, but not filterable in the orders list.</p>
+
+        <div class="callout callout-tip">
+          <strong>Retroactive tagging</strong>
+          When you first enable order tagging, tags are applied retroactively to recent orders. Tags are also refreshed each time you visit the app dashboard.
+        </div>
 
         <div class="callout callout-info">
           <strong>Plan limits</strong>
@@ -1064,7 +1079,7 @@
             <tr>
               <td>PDP pricing</td>
               <td>&mdash;</td>
-              <td>&mdash;</td>
+              <td>Included</td>
               <td>Included</td>
               <td>Included</td>
             </tr>
@@ -1098,6 +1113,11 @@
             </tr>
           </tbody>
         </table>
+
+        <div class="callout callout-tip">
+          <strong>Watermark removal</strong>
+          The "Powered by Skue Labs" watermark is automatically removed on all paid plans (Essentials, Growth, and Scale). No manual action is needed — it only appears on the Free plan.
+        </div>
       </section>
 
       <section class="doc-section" id="upgrading">
